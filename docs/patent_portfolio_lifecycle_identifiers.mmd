@@ -1,0 +1,73 @@
+flowchart TD
+    Intake["Form parsing intake<br/>PTO/SB/16 provisional cover sheet"]
+    Internal["Internal invention_id or matter_id<br/>Primary portfolio key"]
+
+    Intake -->|"normalized PDF fields"| Internal
+
+    subgraph InternalRecords["Assignee / counsel records"]
+        Disclosure["Invention disclosure ID"]
+        Docket["Attorney docket number<br/>Not assigned by USPTO"]
+        Owner["Business owner, assignee, inventors"]
+    end
+
+    Disclosure --> Internal
+    Docket --> Internal
+    Owner --> Internal
+
+    subgraph USPTO["USPTO official identifiers and lifecycle"]
+        Provisional["Provisional application number"]
+        NonProv["Nonprovisional application number<br/>Primary USPTO prosecution key"]
+        Publication["Pre-grant publication number"]
+        Grant["Patent number"]
+        FileHistory["Patent Center file history<br/>status, documents, transactions"]
+        Maintenance["Maintenance fee status"]
+        Expiration["Expected and actual expiration"]
+    end
+
+    Internal --> Provisional
+    Provisional -->|"priority / benefit claim"| NonProv
+    NonProv --> Publication
+    NonProv --> FileHistory
+    Publication --> Grant
+    Grant --> Maintenance
+    Grant --> Expiration
+    FileHistory --> Grant
+    Maintenance --> Expiration
+
+    subgraph Families["Invention-level grouping from data providers"]
+        Priority["Priority claims"]
+        Docdb["EPO DOCDB simple family ID"]
+        Inpadoc["INPADOC extended family ID"]
+        Google["Google Patents family / related publications"]
+    end
+
+    Provisional --> Priority
+    NonProv --> Priority
+    Priority --> Docdb
+    Priority --> Inpadoc
+    Priority --> Google
+
+    subgraph Portfolio["Large portfolio operating layer"]
+        Map["Identifier crosswalk table"]
+        Status["Lifecycle status dashboard"]
+        Alerts["Deadline and fee alerts"]
+        Audit["Source-of-truth audit trail"]
+    end
+
+    Internal --> Map
+    Provisional --> Map
+    NonProv --> Map
+    Publication --> Map
+    Grant --> Map
+    Docdb --> Map
+    Inpadoc --> Map
+    Google --> Map
+
+    Map --> Status
+    FileHistory --> Status
+    Maintenance --> Alerts
+    Expiration --> Alerts
+    Map --> Audit
+
+    Note["Best practice:<br/>use internal invention_id as the master key;<br/>link USPTO numbers and provider family IDs as external identifiers."]
+    Internal --> Note
