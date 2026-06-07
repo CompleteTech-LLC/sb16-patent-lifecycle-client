@@ -1,0 +1,29 @@
+flowchart TD
+    App["Patent Matter Intake workspace"]
+    Rail["Left rail<br/>upload, export, parser state"]
+    Header["Matter header<br/>title + lifecycle metrics"]
+    Matter["Matter Record panel<br/>internal IDs, docket, assignee, status"]
+    Crosswalk["Identifier Crosswalk<br/>internal, USPTO, PCT, provider family IDs"]
+    Timeline["Lifecycle Timeline<br/>twelve dated events"]
+    Raw["Extracted Fields<br/>raw PDF field names"]
+    Json["Normalized JSON<br/>stable SB/16 object"]
+    Deadlines["Deadlines + enrichment stubs<br/>conversion watch, maintenance watch"]
+    Notes["Notes + Source Links<br/>operator context and evidence"]
+
+    App --> Rail
+    App --> Header
+    App --> Matter
+    App --> Crosswalk
+    App --> Timeline
+    App --> Raw
+    App --> Json
+    App --> Deadlines
+    App --> Notes
+
+    Rail -->|"parse PDF"| Raw
+    Raw -->|"normalize"| Json
+    Json -->|"seed intake"| Matter
+    Matter --> Crosswalk
+    Crosswalk --> Timeline
+    Deadlines --> Timeline
+    Notes --> Timeline

@@ -4,6 +4,12 @@ This prototype is a client-side patent intake and lifecycle tracking tool. It st
 
 The app is designed for patent operations users, IP counsel, portfolio managers, and implementation agents who need a repeatable intake model for many patent matters. It is not a filing system, legal docketing system, USPTO data integration, annuity payment service, or source of legal advice.
 
+## Visual Overview
+
+![Patent portfolio lifecycle identifier strategy](./patent_portfolio_lifecycle_identifiers.png)
+
+![Client-side architecture data flow](./architecture_data_flow.png)
+
 ## What The Prototype Does
 
 - Accepts a PDF upload from the browser.

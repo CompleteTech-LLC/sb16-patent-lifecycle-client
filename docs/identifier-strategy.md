@@ -4,6 +4,10 @@ There is no single public USPTO invention-level ID that is independent of provis
 
 The practical strategy is to create an internal master identifier and attach all public and private identifiers to it.
 
+## Identifier Strategy Diagram
+
+![Patent portfolio lifecycle identifier strategy](./patent_portfolio_lifecycle_identifiers.png)
+
 ## Master Key
 
 Use the internal `invention_id` / `matter_id` as the master portfolio key.

@@ -2,6 +2,10 @@
 
 The first version is deliberately local and API-free. Future work should enrich the matter record by adding external source records and linked identifiers without replacing the internal master key.
 
+## Enrichment Roadmap
+
+![Future enrichment roadmap](./future_enrichment_roadmap.png)
+
 ## USPTO Patent Center / Open Data
 
 Future USPTO enrichment should add:

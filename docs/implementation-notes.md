@@ -11,8 +11,8 @@ This project is a Vite, React, and TypeScript client application. It currently r
 - `src/sampleData.ts`: blank SB/16 sample extraction and initial matter factory.
 - `src/styles.css`: visual system, responsive layout, panels, tables, timeline, and form controls.
 - `pdf/sb0016_2.pdf`: blank USPTO PTO/SB/16 PDF used as a reference sample.
-- `docs/patent_portfolio_lifecycle_identifiers.mmd`: Mermaid source diagram.
-- `docs/patent_portfolio_lifecycle_identifiers.png`: high-resolution diagram render.
+- `docs/*.mmd`: editable Mermaid source diagrams.
+- `docs/*.png`: high-resolution rendered diagrams embedded in the Markdown documentation.
 
 ## Dependencies
 

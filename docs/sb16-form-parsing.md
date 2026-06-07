@@ -2,6 +2,10 @@
 
 The app parses the USPTO PTO/SB/16 provisional application cover sheet as a fillable PDF. The current parser is optimized for AcroForm PDFs, including the blank `pdf/sb0016_2.pdf` file in this project.
 
+## Parser Decision Tree
+
+![SB/16 parser decision tree](./sb16_parser_decision_tree.png)
+
 ## AcroForm Extraction
 
 `src/parser.ts` uses `pdf-lib`:

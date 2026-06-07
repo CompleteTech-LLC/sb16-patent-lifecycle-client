@@ -2,6 +2,10 @@
 
 The application is a working portfolio intake surface. It is not a landing page. The first screen is the operator workspace.
 
+## UI Surface Map
+
+![UI surface map](./ui_surface_map.png)
+
 ## Left Rail
 
 The left rail contains the intake controls and parser state.

@@ -1,0 +1,27 @@
+flowchart TD
+    Matter["PatentMatter<br/>internal master key"]
+    Sources["SourceRecord audit layer"]
+    USPTO["USPTO Patent Center / Open Data<br/>status, file history, publications, grants"]
+    Maintenance["USPTO maintenance fee status<br/>windows, payments, lapse risk"]
+    Assignments["Assignment data<br/>ownership events"]
+    EPO["EPO DOCDB / INPADOC<br/>family grouping"]
+    Google["Google Patents / Scholar<br/>discovery, citations, related publications"]
+    PatentsView["PatentsView<br/>analytics metadata"]
+    OCR["OCR / coordinate extraction<br/>flattened or scanned PDFs"]
+    Expiration["Expiration engine<br/>term, PTA, terminal disclaimer, fees"]
+
+    Matter --> Sources
+    USPTO --> Sources
+    Maintenance --> Sources
+    Assignments --> Sources
+    EPO --> Sources
+    Google --> Sources
+    PatentsView --> Sources
+    OCR --> Sources
+    Sources --> Matter
+    USPTO --> Expiration
+    Maintenance --> Expiration
+    Expiration --> Matter
+
+    Note["Rule: enrichment updates linked records and source evidence;<br/>it does not replace the internal master key."]
+    Matter --> Note

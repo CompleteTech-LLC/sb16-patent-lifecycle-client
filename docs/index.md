@@ -17,6 +17,29 @@ This directory documents the client-side patent intake and lifecycle tracking pr
 
 ## Diagram Assets
 
+- ![Client-side architecture data flow](./architecture_data_flow.png)
+- ![Data model relationships](./data_model_relationships.png)
+- ![SB/16 parser decision tree](./sb16_parser_decision_tree.png)
+- ![Patent lifecycle timeline](./lifecycle_timeline.png)
+- ![UI surface map](./ui_surface_map.png)
+- ![Validation and quality flow](./validation_quality_flow.png)
+- ![Future enrichment roadmap](./future_enrichment_roadmap.png)
+- ![Patent portfolio lifecycle identifier strategy](./patent_portfolio_lifecycle_identifiers.png)
+
+- [architecture_data_flow.mmd](./architecture_data_flow.mmd): editable architecture data-flow source.
+- [architecture_data_flow.png](./architecture_data_flow.png): rendered architecture data-flow diagram.
+- [data_model_relationships.mmd](./data_model_relationships.mmd): editable data-model relationship source.
+- [data_model_relationships.png](./data_model_relationships.png): rendered data-model relationship diagram.
+- [sb16_parser_decision_tree.mmd](./sb16_parser_decision_tree.mmd): editable parser decision-tree source.
+- [sb16_parser_decision_tree.png](./sb16_parser_decision_tree.png): rendered parser decision-tree diagram.
+- [lifecycle_timeline.mmd](./lifecycle_timeline.mmd): editable lifecycle timeline source.
+- [lifecycle_timeline.png](./lifecycle_timeline.png): rendered lifecycle timeline diagram.
+- [ui_surface_map.mmd](./ui_surface_map.mmd): editable UI surface map source.
+- [ui_surface_map.png](./ui_surface_map.png): rendered UI surface map.
+- [validation_quality_flow.mmd](./validation_quality_flow.mmd): editable validation and quality source.
+- [validation_quality_flow.png](./validation_quality_flow.png): rendered validation and quality flow.
+- [future_enrichment_roadmap.mmd](./future_enrichment_roadmap.mmd): editable enrichment roadmap source.
+- [future_enrichment_roadmap.png](./future_enrichment_roadmap.png): rendered enrichment roadmap.
 - [patent_portfolio_lifecycle_identifiers.mmd](./patent_portfolio_lifecycle_identifiers.mmd): editable Mermaid diagram source.
 - [patent_portfolio_lifecycle_identifiers.png](./patent_portfolio_lifecycle_identifiers.png): high-resolution rendered diagram.
 

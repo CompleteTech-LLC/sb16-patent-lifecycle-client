@@ -2,6 +2,10 @@
 
 All primary client types are defined in `src/types.ts`. The model separates the internal portfolio record from linked identifiers, dated lifecycle events, parsed form output, source records, and deadlines.
 
+## Relationship Diagram
+
+![Data model relationships](./data_model_relationships.png)
+
 ## PatentMatter
 
 `PatentMatter` is the main client record.

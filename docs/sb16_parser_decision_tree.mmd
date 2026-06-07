@@ -1,0 +1,15 @@
+flowchart TD
+    Start["Uploaded PTO/SB/16 PDF"]
+    Load["Load PDF in browser<br/>PDFDocument.load()"]
+    Fields{"AcroForm fields found?"}
+    Read["Read field values<br/>text, checkbox, radio, dropdown"]
+    Preserve["Preserve rawFields<br/>original PDF field names"]
+    Map["Map to NormalizedSb16<br/>title, inventors, address, status, parts, government interest, signer, docket"]
+    Warnings["Create validation warnings<br/>missing title, inventors, docket, signer"]
+    Success["fallbackNeeded = false<br/>render extracted fields + JSON"]
+    Fallback["fallbackNeeded = true<br/>OCR or coordinate extraction required"]
+    Review["Operator review<br/>compare raw fields to normalized JSON"]
+
+    Start --> Load --> Fields
+    Fields -->|"yes"| Read --> Preserve --> Map --> Warnings --> Success --> Review
+    Fields -->|"no"| Fallback --> Review

@@ -1,0 +1,16 @@
+flowchart TD
+    Extract["Extract raw PDF fields"]
+    Normalize["Normalize to client schema"]
+    Warn["Generate warnings<br/>missing title, inventors, docket, signer"]
+    Compare["Compare rawFields to NormalizedSb16"]
+    Source["Confirm SourceRecord evidence"]
+    IDs["Verify identifier authority<br/>internal vs USPTO vs provider"]
+    Events["Check lifecycle events<br/>date, status, sourceRecordIds"]
+    Export["Export JSON"]
+    Review["Operator review complete"]
+
+    Extract --> Normalize --> Warn --> Compare --> Source --> IDs --> Events --> Export --> Review
+
+    Legal["Legal source-of-truth boundary:<br/>USPTO controls U.S. status, file history, grants, maintenance;<br/>family providers are grouping aids."]
+    IDs --> Legal
+    Legal --> Events

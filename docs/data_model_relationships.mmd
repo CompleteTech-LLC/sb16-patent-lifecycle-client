@@ -1,0 +1,26 @@
+flowchart TD
+    Matter["PatentMatter<br/>master client record"]
+    Identifiers["PatentIdentifier[]<br/>crosswalk of internal, USPTO, PCT, provider IDs"]
+    Events["LifecycleEvent[]<br/>dated matter history"]
+    Inventors["Inventor[]<br/>normalized SB/16 inventor rows"]
+    Assignee["Assignee<br/>current ownership-facing record"]
+    Sources["SourceRecord[]<br/>PDF, manual, external evidence"]
+    Deadlines["Deadline[]<br/>watch and docketing items"]
+    Extraction["PdfExtractionResult<br/>fileName, rawFields, normalized, warnings"]
+    Normalized["NormalizedSb16<br/>stable parsed form schema"]
+    Raw["rawFields<br/>original PDF field names and values"]
+
+    Matter --> Identifiers
+    Matter --> Events
+    Matter --> Inventors
+    Matter --> Assignee
+    Matter --> Sources
+    Matter --> Deadlines
+    Extraction --> Raw
+    Extraction --> Normalized
+    Normalized --> Inventors
+    Extraction --> Sources
+    Sources -. "sourceRecordIds" .-> Events
+
+    Rule["Portfolio rule:<br/>internal invention_id / matter_id is the join key;<br/>external identifiers remain linked records."]
+    Matter --> Rule

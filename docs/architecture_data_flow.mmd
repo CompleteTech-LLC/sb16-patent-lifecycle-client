@@ -1,0 +1,37 @@
+flowchart LR
+    User["Patent operations user"]
+    Upload["PDF upload control"]
+    File["Browser File object"]
+    Parser["extractSb16FromPdf(file)<br/>src/parser.ts"]
+    PdfLib["pdf-lib<br/>PDFDocument + AcroForm"]
+    Raw["rawFields<br/>exact PDF field names"]
+    Normalize["normalizeSb16Fields()<br/>stable client schema"]
+    Validate["validateNormalizedSb16()<br/>intake warnings"]
+    Extraction["PdfExtractionResult"]
+    Matter["PatentMatter<br/>internal master record"]
+    UI["React UI panels<br/>src/main.tsx"]
+    Export["JSON export<br/>{ matter, extraction }"]
+
+    User --> Upload --> File --> Parser
+    Parser --> PdfLib --> Raw
+    Raw --> Normalize --> Extraction
+    Normalize --> Validate --> Extraction
+    Extraction --> Matter
+    Matter --> UI
+    Extraction --> UI
+    UI --> Export
+
+    subgraph "Local-only boundary"
+        Parser
+        PdfLib
+        Raw
+        Normalize
+        Validate
+        Extraction
+        Matter
+        UI
+        Export
+    end
+
+    External["Future enrichment stubs<br/>USPTO, Google, EPO, PatentsView"]
+    External -. "not called in v1" .-> Matter

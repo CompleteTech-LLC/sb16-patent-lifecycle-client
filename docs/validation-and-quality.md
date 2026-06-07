@@ -2,6 +2,10 @@
 
 The first version implements lightweight validation focused on intake completeness and auditability.
 
+## Validation Flow
+
+![Validation and quality flow](./validation_quality_flow.png)
+
 ## Current Validation Rules
 
 `validateNormalizedSb16()` warns when:

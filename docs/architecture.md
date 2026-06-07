@@ -6,6 +6,10 @@ The prototype is a local browser application built with Vite, React, TypeScript,
 
 The application entrypoint is `src/main.tsx`. It renders one React app into `#root`, stores all user-visible state in React state, and passes parser output directly into the matter record.
 
+## Architecture Diagram
+
+![Client-side architecture data flow](./architecture_data_flow.png)
+
 Primary runtime state:
 
 - `matter`: a `PatentMatter` object created by `makeInitialMatter()`.

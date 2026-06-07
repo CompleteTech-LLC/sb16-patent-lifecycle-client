@@ -2,6 +2,10 @@
 
 The prototype models patent tracking as a dated sequence of lifecycle events attached to an internal master matter record. The SB/16 parse is the first event; it is not the whole lifecycle.
 
+## Lifecycle Diagram
+
+![Patent lifecycle timeline](./lifecycle_timeline.png)
+
 ## Lifecycle Events In The App
 
 The initial lifecycle contains twelve event rows:
