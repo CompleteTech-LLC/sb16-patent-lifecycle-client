@@ -16,4 +16,4 @@ npm run build    # tsc then vite build
 
 - `src/` - app code (`main.tsx`, `parser.ts`, `types.ts`, `sampleData.ts`).
 - `docs/` - architecture, data model, lifecycle, identifier strategy, SB16 parsing, UI guide, and validation notes; start at `docs/README.md`.
-- `pdf/` - PDF assets.
+- `pdf/` - a sample SB/16 PDF (`sb0016_2.pdf`).
