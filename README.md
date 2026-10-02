@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.jpg" alt="An isometric PDF form in a browser window with a padlock, scanned and extracted into data blocks that flow along a lifecycle timeline of milestones." width="100%"></p>
+
 # sb16-patent-lifecycle-client
 
 Browser-only prototype (React, TypeScript, Vite) for patent matter intake. It reads a USPTO PTO/SB/16 provisional application cover sheet PDF in the browser with `pdf-lib`, extracts the AcroForm fields, normalizes them to JSON, and records the parse as the first event in a patent matter lifecycle. The PDF is not sent to a server.
